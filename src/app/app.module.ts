@@ -3,12 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+import { ContratoBandejaComponent } from './mantenimiento/contrato/bandeja.component';
+import { ConfigVariableBandejaComponent } from './mantenimiento/configvariable/bandeja.component';
+
+
+const rutaApp: Routes = [
+  { path: 'backoffice/mantenimiento/xxxxx', component: ContratoBandejaComponent},
+  { path: 'backoffice/mantenimiento/variable', component: ConfigVariableBandejaComponent}
+];
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContratoBandejaComponent,
+    ConfigVariableBandejaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(rutaApp)
   ],
   providers: [],
   bootstrap: [AppComponent]
